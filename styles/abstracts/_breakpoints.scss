@@ -1,0 +1,89 @@
+/* ==========================================
+   Breakpoints
+========================================== */
+
+$mobile-sm: 320px;
+$mobile: 480px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1280px;
+$desktop-lg: 1440px;
+$desktop-xl: 1600px;
+
+/* ==========================================
+   Max Width Breakpoints
+========================================== */
+
+@mixin mobile-sm {
+  @media (max-width: #{$mobile-sm}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (max-width: #{$desktop}) {
+    @content;
+  }
+}
+
+/* ==========================================
+   Min Width Breakpoints
+========================================== */
+
+@mixin tablet-up {
+  @media (min-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin laptop-up {
+  @media (min-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin desktop-up {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin desktop-lg-up {
+  @media (min-width: #{$desktop-lg}) {
+    @content;
+  }
+}
+
+@mixin desktop-xl-up {
+  @media (min-width: #{$desktop-xl}) {
+    @content;
+  }
+}
+
+/* ==========================================
+   Between Two Breakpoints
+========================================== */
+
+@mixin between($min, $max) {
+  @media (min-width: #{$min}) and (max-width: #{$max}) {
+    @content;
+  }
+}

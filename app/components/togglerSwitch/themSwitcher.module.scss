@@ -1,0 +1,91 @@
+.themeWrapper {
+  position: relative;
+}
+
+.settingButton {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  outline: none;
+
+  border-radius: 50%;
+
+  background: var(--card-bg);
+  color: var(--text-primary);
+
+  cursor: pointer;
+
+  font-size: 1.35rem;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  transition: all 0.35s ease;
+
+  &:hover {
+    transform: rotate(90deg) scale(1.05);
+    background: var(--primary);
+    color: white;
+  }
+}
+
+.themePopup {
+  position: absolute;
+
+  top: 65px;
+  right: 0;
+
+  width: 230px;
+
+  padding: 18px;
+
+  border-radius: 18px;
+
+  background: var(--card-bg);
+
+  border: 1px solid var(--border);
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  z-index: 999;
+}
+
+.themePopup button {
+  border: none;
+  outline: none;
+
+  padding: 12px 16px;
+
+  border-radius: 12px;
+
+  background: transparent;
+
+  color: var(--text-primary);
+
+  font-size: 15px;
+  font-weight: 600;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateX(5px);
+  }
+}
+
+.themePopup button:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}

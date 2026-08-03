@@ -1,0 +1,21 @@
+[data-theme="dark"] {
+  --primary: #3b82f6;
+  --secondary: #60a5fa;
+
+  --background: #020617;
+  --surface: #0f172a;
+
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+
+  --border: #334155;
+
+  --card-bg: #1e293b;
+
+  --navbar-bg: rgba(2,6,23,.8);
+
+  --button-bg: var(--primary);
+  --button-text: #fff;
+
+  --gradient: linear-gradient(135deg,#2563eb,#38bdf8);
+}

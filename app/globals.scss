@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import "../styles/themes/light";
+@import "../styles/themes/dark";
+@import "../styles/themes/purple";
+@import "../styles/themes/orange";
+@import "../styles/themes/emerald";
+@import "../styles/abstracts/mixins";
+@import "../styles/abstracts/mixins";
+@import "../styles/abstracts/breakpoints";
+@import "../styles/abstracts/variables";
+*,
+*::before,
+*::after {
+  // margin: 0;
+  // padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+
+  background: var(--background);
+  color: var(--text-primary);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1250px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+
+  @include tablet {
+    padding-inline: 1.5rem;
+  }
+
+  @include laptop {
+    padding-inline: 2rem;
+  }
+}
