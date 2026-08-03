@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "app/components/hero/HeroContent.jsx", "app/components/hero/HeroButtons.jsx"  ],
+, "app/components/hero/HeroContent.jsx", "app/components/hero/HeroButtons.jsx", "app/layout.jsx"  ],
   "exclude": ["node_modules"]
 }

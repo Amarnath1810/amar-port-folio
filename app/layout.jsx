@@ -1,8 +1,7 @@
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.scss";
 import { ThemeProvider } from "./utils/context/ThemeContext";
-import Navbar from './components/navbar/ Navbar'
+import Navbar from './components/navbar/Navbar'
 import { Toaster } from "react-hot-toast";
 
 const geistSans = Geist({
@@ -15,15 +14,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Portfolio",
   description: "Portfolio",
 };
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
 }) {
   return (
     <html
