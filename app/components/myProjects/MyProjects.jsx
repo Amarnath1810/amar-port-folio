@@ -27,7 +27,7 @@ const projects = [
   },
   {
     name: "Liquid Therapy",
-    image: "/images/liquid Therapy.png",
+    image: "/images/liquidtherapy.png",
     link: "https://play.google.com/store/apps/details?id=com.liquidtherapy.liquidandroid&hl=en_IN",
   },
   {
