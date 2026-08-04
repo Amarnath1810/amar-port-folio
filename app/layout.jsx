@@ -21,9 +21,7 @@ export const metadata = {
     default: "Amar | Full Stack Developer",
     template: "%s | Amar",
   },
-  verification: {
-  google: "OFZM907cxLUnbSIzOK0N5Trpu9EtmfD9Zm0oy6wcxoA",
-},
+
   description:
     "Full Stack Developer with 3.5+ years of experience building scalable Web & Mobile Applications using React Native, React.js, Next.js, Node.js, Express.js and MongoDB.",
 
@@ -87,10 +85,9 @@ export const metadata = {
       "max-video-preview": -1,
     },
   },
-
-  verification: {
-    google: "YOUR_GOOGLE_SEARCH_CONSOLE_CODE",
-  },
+verification: {
+  google: "OFZM907cxLUnbSIzOK0N5Trpu9EtmfD9Zm0oy6wcxoA",
+},
 
   openGraph: {
     type: "website",
