@@ -61,7 +61,7 @@ keywords: [
   ],
 
   creator: "Veeramreddy Amarnath Reddy",
-
+  email:"veeramreddyamar36@gmail.com"
   publisher: "Veeramreddy Amarnath Reddy",
 
   category: "technology",
