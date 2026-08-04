@@ -333,11 +333,13 @@
 
   @include tablet {
     justify-content: center;
+     margin-left: 0px;
   }
 
   @include mobile {
     justify-content: center;
     gap: 12px;
+    margin-left: 0px;
   }
 
   &::before {
