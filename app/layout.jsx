@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL("https://amar-port-folio.vercel.app"),
 
-  title: {
-    default: "Amar | Full Stack Developer",
-    template: "%s | Amar",
-  },
+title: {
+  default: "Veeramreddy Amarnath Reddy | Full Stack Developer",
+  template: "%s | Veeramreddy Amarnath Reddy",
+},
 
   description:
     "Full Stack Developer with 3.5+ years of experience building scalable Web & Mobile Applications using React Native, React.js, Next.js, Node.js, Express.js and MongoDB.",
