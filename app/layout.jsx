@@ -3,6 +3,7 @@ import { ThemeProvider } from "./utils/context/ThemeContext";
 import Navbar from "./components/navbar/Navbar";
 import { Toaster } from "react-hot-toast";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
