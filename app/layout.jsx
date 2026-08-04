@@ -158,6 +158,126 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
       <body>
+        <Script
+  id="person-jsonld"
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+
+      "@id": "https://amarnathreddy.vercel.app/#person",
+
+      name: "Veeramreddy Amarnath Reddy",
+
+      givenName: "Amarnath",
+
+      familyName: "Veeramreddy",
+
+      additionalName: "Amar",
+
+      alternateName: [
+        "Amarnath Reddy",
+        "Amar Reddy",
+        "Amar",
+        "Amarnath",
+        "Veeramreddy Amar",
+        "Veeramreddy Amarnath",
+        "Amar Nath Reddy",
+        "Veeramreddy Amarnath Reddy",
+        "Amar Full Stack Developer",
+        "Amarnath Full Stack Developer",
+        "React Native Developer Amar",
+        "React Native Developer Amarnath",
+        "React Developer Amar",
+        "React.js Developer Amar",
+        "Next.js Developer Amar",
+        "Node.js Developer Amar",
+        "JavaScript Developer Amar",
+        "TypeScript Developer Amar",
+        "MongoDB Developer Amar",
+        "Frontend Developer Amar",
+        "Backend Developer Amar",
+        "Software Engineer Amar",
+        "Full Stack Developer Amar",
+        "HRGF Amar",
+        "HRGF Amarnath",
+        "NESMA Developer",
+      ],
+
+      gender: "Male",
+
+      nationality: "Indian",
+
+      jobTitle: "Full Stack Developer",
+
+      description:
+        "Veeramreddy Amarnath Reddy is a Full Stack Developer with 3.5+ years of experience specializing in React Native, React.js, Next.js, Node.js, Express.js, MongoDB, JavaScript and TypeScript. Passionate about building high-performance web and mobile applications.",
+
+      url: "https://amarnathreddy.vercel.app",
+
+      image:
+        "https://amarnathreddy.vercel.app/images/profile.png",
+
+      email: "mailto:veeramreddyamar36@gmail.com",
+
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: "India",
+      },
+
+      worksFor: {
+        "@type": "Organization",
+        name: "HRGF",
+      },
+
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "NBKR Institute of Science and Technology",
+      },
+
+      knowsLanguage: [
+        "English",
+        "Telugu",
+      ],
+
+      knowsAbout: [
+        "React",
+        "React.js",
+        "React Native",
+        "Next.js",
+        "Node.js",
+        "Express.js",
+        "JavaScript",
+        "TypeScript",
+        "MongoDB",
+        "Redux",
+        "REST API",
+        "Firebase",
+        "GraphQL",
+        "HTML5",
+        "CSS3",
+        "SCSS",
+        "Tailwind CSS",
+        "Git",
+        "GitHub",
+        "Responsive Web Design",
+        "Frontend Development",
+        "Backend Development",
+        "Full Stack Development",
+        "Mobile Application Development",
+        "Android Development",
+        "iOS Development",
+      ],
+
+      sameAs: [
+        "https://github.com/Amarnath1810",
+        "https://www.linkedin.com/in/veeramreddy-amarnathreddy-84662022a/",
+        "https://amarnathreddy.vercel.app",
+      ],
+    }),
+  }}
+/>
         <ThemeProvider>
           <Navbar />
 
