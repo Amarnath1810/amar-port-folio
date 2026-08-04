@@ -19,7 +19,7 @@ export const metadata = {
 title: {
     default:
       "Veeramreddy Amarnath Reddy | Amar | Full Stack Developer | React Native | Next.js Developer",
-    template: "%s | Veeramreddy Amarnath Reddy",
+    template: "%s | Veeramreddy Amarnath Reddy | Amaranth reddy v",
   },
 description:
     "Veeramreddy Amarnath Reddy (Amar) is a Full Stack Developer with 3.5+ years of experience in React Native, React.js, Next.js, Node.js, MongoDB, JavaScript, TypeScript, Android and iOS app development. Explore portfolio, projects, GitHub and professional experience.",
