@@ -16,36 +16,41 @@ const geistMono = Geist_Mono({
 
 export const metadata = {
   metadataBase: new URL("https://amar-port-folio.vercel.app"),
-
 title: {
-  default: "Veeramreddy Amarnath Reddy | Full Stack Developer",
-  template: "%s | Veeramreddy Amarnath Reddy",
-},
+    default:
+      "Veeramreddy Amarnath Reddy | Amar | Full Stack Developer | React Native | Next.js Developer",
+    template: "%s | Veeramreddy Amarnath Reddy",
+  },
+description:
+    "Veeramreddy Amarnath Reddy (Amar) is a Full Stack Developer with 3.5+ years of experience in React Native, React.js, Next.js, Node.js, MongoDB, JavaScript, TypeScript, Android and iOS app development. Explore portfolio, projects, GitHub and professional experience.",
 
-  description:
-    "Full Stack Developer with 3.5+ years of experience building scalable Web & Mobile Applications using React Native, React.js, Next.js, Node.js, Express.js and MongoDB.",
+  
 
   applicationName: "Amar Portfolio",
 
-  keywords: [
-    "Amar",
+keywords: [
     "Veeramreddy Amarnath Reddy",
     "Amarnath Reddy",
+    "Amar Reddy",
+    "Amar",
+    "Amarnath",
+    "Veeramreddy",
     "Full Stack Developer",
-    "Frontend Developer",
-    "Backend Developer",
     "React Native Developer",
     "React Developer",
-    "React.js",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "MongoDB",
-    "JavaScript",
-    "TypeScript",
+    "Next.js Developer",
+    "JavaScript Developer",
+    "TypeScript Developer",
+    "Node.js Developer",
+    "MongoDB Developer",
+    "Android Developer",
+    "iOS Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Software Engineer",
+    "HRGF Developer",
+    "NESMA Developer",
     "Portfolio",
-    "Mobile App Developer",
-    "India",
   ],
 
   authors: [
