@@ -57,8 +57,8 @@ export const socialLinks = [
   {
     id: 3,
     icon: MdEmail,
-    url: "veeramreddyamar36@gmail.com",
-  },
+    url: "mailto:veeramreddyamar36@gmail.com",
+  }
 ];
 export const backgroundBlobs = [
   {
