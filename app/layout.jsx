@@ -196,6 +196,7 @@ export default function RootLayout({ children }) {
         "Veeramreddy Amar",
         "Veeramreddy Amarnath",
         "Amar Nath Reddy",
+        "Amarnath Reddy Portfolio",
         "Veeramreddy Amarnath Reddy",
         "Amar Full Stack Developer",
         "Amarnath Full Stack Developer",
