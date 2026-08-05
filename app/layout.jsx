@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://amar-port-folio.vercel.app"),
+  metadataBase: new URL("https://amarnathreddy.vercel.app"),
 title: {
     default:
       "Veeramreddy Amarnath Reddy | Amar | Full Stack Developer | React Native | Next.js Developer",
@@ -68,7 +68,7 @@ keywords: [
   category: "technology",
 
   alternates: {
-    canonical: "https://amar-port-folio.vercel.app",
+    canonical: "https://amarnathreddy.vercel.app",
   },
 
   referrer: "origin-when-cross-origin",
@@ -98,7 +98,7 @@ verification: {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://amar-port-folio.vercel.app",
+    url: "https://amarnathreddy.vercel.app",
     siteName: "Amar Portfolio",
 
     title: "Amar | Full Stack Developer",
@@ -130,7 +130,8 @@ verification: {
   icons: {
     icon: [
       {
-        url: "/images/favicon.ico",
+        url: "/app/favicon.ico",
+        sizes: "any",
       },
       {
         url: "/images/favicon-64x64.png",
@@ -139,7 +140,7 @@ verification: {
       },
     ],
 
-    shortcut: "/images/favicon.ico",
+    shortcut: "/app/favicon.ico",
 
     apple: [
       {
@@ -152,7 +153,6 @@ verification: {
 
   manifest: "/site.webmanifest",
 
-  themeColor: "#2563eb",
 };
 
 export default function RootLayout({ children }) {
@@ -219,8 +219,6 @@ export default function RootLayout({ children }) {
 
       image:
         "https://amarnathreddy.vercel.app/images/profile.png",
-
-      email: "mailto:veeramreddyamar36@gmail.com",
 
       address: {
         "@type": "PostalAddress",
