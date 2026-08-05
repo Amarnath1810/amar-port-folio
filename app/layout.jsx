@@ -19,8 +19,8 @@ export const metadata = {
   metadataBase: new URL("https://amarnathreddy.vercel.app"),
 title: {
     default:
-      "Veeramreddy Amarnath Reddy | Amar | Full Stack Developer | React Native | Next.js Developer",
-    template: "%s | Veeramreddy Amarnath Reddy | Amaranth reddy v",
+      "Veeramreddy Amarnath Reddy (Amar)| Amar | Full Stack Developer | React Native | Next.js Developer",
+    template: "%s | Veeramreddy Amarnath Reddy | Amaranth reddy v | Amarnath Reddy Portfolio",
   },
 description:
     "Veeramreddy Amarnath Reddy (Amar) is a Full Stack Developer with 3.5+ years of experience in React Native, React.js, Next.js, Node.js, MongoDB, JavaScript, TypeScript, Android and iOS app development. Explore portfolio, projects, GitHub and professional experience.",
