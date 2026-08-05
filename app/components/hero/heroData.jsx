@@ -47,7 +47,7 @@ export const socialLinks = [
   {
     id: 1,
     icon: FaGithub,
-    url: "https://github.com/your-github",
+    url: "https://github.com/Amarnath1810/profile-view",
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ export const socialLinks = [
   {
     id: 3,
     icon: MdEmail,
-    url: "mailto:yourmail@gmail.com",
+    url: "veeramreddyamar36@gmail.com",
   },
 ];
 export const backgroundBlobs = [
