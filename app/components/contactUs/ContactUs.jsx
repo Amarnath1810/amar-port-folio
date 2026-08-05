@@ -300,7 +300,7 @@ export default function ContactUs() {
                 </a>
 
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/veeramreddy-amarnathreddy-84662022a/"
                   target="_blank"
                   rel="noreferrer"
                   className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] transition hover:border-[var(--primary)]/50 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]"
