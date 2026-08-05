@@ -128,29 +128,37 @@ verification: {
     images: ["/images/og-image.png"],
   },
 
-  icons: {
-    icon: [
-      {
-        url: "/app/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "/images/favicon-64x64.png",
-        sizes: "64x64",
-        type: "image/png",
-      },
-    ],
+icons: {
+  icon: [
+    {
+      url: "/favicon.ico",
+      sizes: "any",
+      type: "image/x-icon",
+    },
+    {
+      url: "/images/favicon-64x64.png",
+      sizes: "64x64",
+      type: "image/png",
+    },
+  ],
 
-    shortcut: "/app/favicon.ico",
+  shortcut: "/favicon.ico",
 
-    apple: [
-      {
-        url: "/images/apple-touch-icon.png",
-        sizes: "180x180",
-        type: "image/png",
-      },
-    ],
-  },
+  apple: [
+    {
+      url: "/images/apple-touch-icon.png",
+      sizes: "180x180",
+      type: "image/png",
+    },
+  ],
+
+  other: [
+    {
+      rel: "mask-icon",
+      url: "/favicon.ico",
+    },
+  ],
+},
 
   manifest: "/site.webmanifest",
 
