@@ -33,6 +33,7 @@ keywords: [
     "Veeramreddy Amarnath Reddy",
     "Veeramreddy Amarnath Reddy (Amar)"
     "Amarnath Reddy",
+    "Amarnath Reddy Portfolio",
     "Amar Reddy",
     "Amar",
     "Amarnath",
