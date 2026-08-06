@@ -104,7 +104,7 @@ verification: {
     url: "https://amarnathreddy.vercel.app",
     siteName: "Veeramreddy Amarnath Reddy",
 
-    title:"Veeramreddy Amarnath Reddy | Full Stack Developer",,
+    title:"Veeramreddy Amarnath Reddy | Full Stack Developer",
 
     description:
       "Full Stack Developer specializing in React Native, React.js, Next.js, Node.js, Express.js and MongoDB.",
