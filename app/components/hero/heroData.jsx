@@ -19,7 +19,7 @@ export const heroData = {
   description:
     "Building scalable Web & Mobile Applications using React Native, React.js, Next.js, Node.js, Express.js and MongoDB. Passionate about creating clean, responsive and high-performance applications.",
 
-  resume: "/resume/Amarnath-Resume.pdf",
+  resume: "/images/AmarnathReddyFullStack.pdf",
 
   buttons: {
     resume: "Download Resume",
