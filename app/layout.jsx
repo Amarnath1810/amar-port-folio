@@ -111,7 +111,7 @@ verification: {
 
     images: [
       {
-        url: "/images/og-image.png",
+        url: "https://amarnathreddy.vercel.app/images/og-image.png",
         width: 1200,
         height: 630,
         alt: "Amar Portfolio",
