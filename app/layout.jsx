@@ -102,9 +102,9 @@ verification: {
     type: "website",
     locale: "en_US",
     url: "https://amarnathreddy.vercel.app",
-    siteName: "Amar Portfolio",
+    siteName: "Veeramreddy Amarnath Reddy",
 
-    title: "Amar | Full Stack Developer",
+    title:"Veeramreddy Amarnath Reddy | Full Stack Developer",,
 
     description:
       "Full Stack Developer specializing in React Native, React.js, Next.js, Node.js, Express.js and MongoDB.",
@@ -122,7 +122,7 @@ verification: {
   twitter: {
     card: "summary_large_image",
 
-    title: "Amar | Full Stack Developer",
+   title:"Veeramreddy Amarnath Reddy | Full Stack Developer",
 
     description:
       "Full Stack Developer specializing in React Native, React.js, Next.js, Node.js and MongoDB.",
