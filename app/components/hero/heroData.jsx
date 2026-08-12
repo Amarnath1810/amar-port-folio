@@ -47,7 +47,7 @@ export const socialLinks = [
   {
     id: 1,
     icon: FaGithub,
-    url: "https://github.com/Amarnath1810/profile-view",
+    url: "https://github.com/Amarnath1810",
   },
   {
     id: 2,
