@@ -291,7 +291,7 @@ export default function ContactUs() {
               </p>
               <div className="mt-3 flex items-center gap-3">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/Amarnath1810"
                   target="_blank"
                   rel="noreferrer"
                   className="flex h-11 w-11 items-center justify-center rounded-xl border border-[var(--border)] bg-[var(--surface)] text-[var(--text-secondary)] transition hover:border-[var(--primary)]/50 hover:bg-[var(--primary)]/10 hover:text-[var(--primary)]"
