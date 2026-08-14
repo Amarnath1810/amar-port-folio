@@ -321,7 +321,7 @@ export default function ContactUs() {
 
             {/* Resume Button */}
             <a
-              href="/resume.pdf"
+              href="/images/AmarnathReddyFullStack.pdf"
               download
               className="mt-8 flex w-full items-center justify-center gap-2 rounded-xl border border-[var(--primary)]/30 bg-[var(--primary)]/10 py-3.5 text-xs font-semibold text-[var(--primary)] backdrop-blur-xl transition hover:border-[var(--primary)] hover:bg-[var(--primary)]/20"
             >
