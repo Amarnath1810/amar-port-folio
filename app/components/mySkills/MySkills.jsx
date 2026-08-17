@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { skillsData } from "./mySkillData";
 
-const isDarkColor = (color: string) => {
+const isDarkColor = (color) => {
   if (!color) return true;
 
   const hex = color.replace("#", "").toLowerCase();
