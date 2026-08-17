@@ -1,12 +1,7 @@
-@use "../styles/abstracts/variables" as *;
-@use "../styles/abstracts/mixins" as *;
-@use "../styles/abstracts/breakpoints" as *;
+@use "../../../styles/abstracts/mixins" as *;
+@use "../../../styles/abstracts/breakpoints" as *;
+@use "../../../styles/abstracts/variables" as *;
 
-@import "tailwindcss";
-
-/* your remaining global styles */
-
-/* your remaining global styles */
 /* =========================================
    HERO SECTION
 ========================================= */
@@ -324,9 +319,6 @@
 /* =========================================
    NAME GRADIENT
 ========================================= */
-/* =========================================
-   NAME GRADIENT
-========================================= */
 
 .gradient {
   display: block;
@@ -345,6 +337,10 @@
 
   white-space: nowrap;
 
+  /*
+   * Do not let the long surname push the whole Hero
+   * outside its left column.
+   */
   overflow: hidden;
   text-overflow: clip;
 
@@ -356,8 +352,26 @@
   -webkit-text-fill-color: transparent;
 }
 
-========================================= */
 
+========================================= */
+.gradient {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  background: var(--gradient);
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 
 /* =========================================
    DESIGNATION
@@ -680,18 +694,17 @@
 
 ========================================= */
 
-/* =========================================
-   DOT
-========================================= */
-
 .dot {
   position: relative;
+
   z-index: 30;
 
   width: 7px;
+
   height: 7px;
 
   flex-shrink: 0;
+
   display: inline-block;
 
   border-radius: 50%;
@@ -702,9 +715,9 @@
     0 0 8px rgba(255, 255, 255, 0.9);
 
   opacity: 1;
+
   visibility: visible;
 }
-
 
 /* =========================================
    MOBILE NAME OVERRIDE
@@ -722,6 +735,7 @@
     text-align: center;
   }
 }
+
 /* =========================================
    MOBILE
 ========================================= */
