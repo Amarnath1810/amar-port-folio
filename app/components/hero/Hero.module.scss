@@ -372,153 +372,334 @@
    SKILL CHIP
 ========================================= */
 
-.skill {
-  position: relative;
-
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-
-  gap: 9px;
-
-  min-height: 44px;
-  padding: 0 18px;
-
-  border-radius: 999px;
-
-  color: var(--text-primary) !important;
-  -webkit-text-fill-color: var(--text-primary) !important;
-
-  font-size: 14px !important;
-  font-weight: 600 !important;
-  line-height: 1;
-
-  white-space: nowrap;
-
-  background: var(--card-bg);
-
-  border: 1px solid var(--border);
-
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-
-  overflow: hidden;
-
-  cursor: default;
-
-  z-index: 10;
-
-  box-shadow:
-    0 6px 18px rgba(37, 99, 235, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background 0.3s ease;
-
-  &::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    border-radius: inherit;
-
-    background:
-      linear-gradient(
-        135deg,
-        rgba(37, 99, 235, 0.08),
-        rgba(56, 189, 248, 0.04),
-        transparent
-      );
-
-    pointer-events: none;
-
-    z-index: -1;
-  }
-
-  &::after {
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-    left: -120%;
-
-    width: 80%;
-    height: 100%;
-
-    background:
-      linear-gradient(
-        90deg,
-        transparent,
-        rgba(255, 255, 255, 0.18),
-        transparent
-      );
-
-    transform: skewX(-20deg);
-
-    transition: left 0.7s ease;
-
-    pointer-events: none;
-  }
-
-  &:hover {
-    transform: translateY(-4px);
-
-    color: var(--text-primary) !important;
-    -webkit-text-fill-color: var(--text-primary) !important;
-
-    border-color: var(--primary);
-
-    background: var(--card-bg);
-
-    box-shadow:
-      0 10px 28px rgba(37, 99, 235, 0.16);
-  }
-
-  &:hover::after {
-    left: 140%;
-  }
-
-  @include mobile {
-    min-height: 42px;
-
-    padding: 0 15px;
-
-    font-size: 13px !important;
-  }
-}
 /* =========================================
-   BUTTONS
+   HERO SKILLS CONTAINER
 ========================================= */
 
-.buttons {
+.skills {
   position: relative;
 
   display: flex;
-
+  flex-wrap: wrap;
   align-items: center;
 
-  justify-content: flex-start;
-
-  gap: 1rem;
+  gap: 14px;
 
   width: 100%;
 
   margin-top: 2rem;
+  margin-left: 0;
+
+  padding: 10px 0;
+
+  z-index: 10;
 
   @include tablet {
     justify-content: center;
   }
 
   @include mobile {
-    flex-direction: column;
+    gap: 10px;
 
+    justify-content: center;
+
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* =========================================
+   SKILLS BACKGROUND LINES
+========================================= */
+
+.skills::before {
+  content: "";
+
+  position: absolute;
+
+  top: -25px;
+  right: -25px;
+  bottom: -25px;
+  left: -25px;
+
+  z-index: -1;
+
+  pointer-events: none;
+
+  opacity: 0.22;
+
+  background-image:
+    repeating-linear-gradient(
+      -45deg,
+      rgba(59, 130, 246, 0.12) 0px,
+      rgba(59, 130, 246, 0.12) 2px,
+      transparent 2px,
+      transparent 18px
+    );
+}
+
+
+/* =========================================
+   SKILL CHIP
+========================================= */
+
+.skill {
+  position: relative;
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  min-height: 44px;
+
+  padding: 0 18px;
+
+  border-radius: 999px;
+
+  /*
+   * TEXT
+   */
+
+  color: var(--text-primary) !important;
+
+  -webkit-text-fill-color: var(--text-primary) !important;
+
+  font-size: 14px !important;
+
+  font-weight: 600 !important;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  /*
+   * GLASS BACKGROUND
+   */
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  /*
+   * BORDER
+   */
+
+  border: 1px solid var(--border);
+
+  /*
+   * GLASS EFFECT
+   */
+
+  backdrop-filter: blur(16px);
+
+  -webkit-backdrop-filter: blur(16px);
+
+  /*
+   * SHADOW
+   */
+
+  box-shadow:
+    0 6px 18px rgba(37, 99, 235, 0.08);
+
+  overflow: hidden;
+
+  cursor: default;
+
+  z-index: 20;
+
+  isolation: isolate;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+
+/* =========================================
+   SKILL INNER GLOW
+========================================= */
+
+.skill::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -1;
+
+  border-radius: inherit;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.10),
+      rgba(56, 189, 248, 0.05),
+      transparent
+    );
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SKILL SHINE
+========================================= */
+
+.skill::after {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 80%;
+  height: 100%;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.18),
+      transparent
+    );
+
+  transform: skewX(-20deg);
+
+  transition:
+    left 0.7s ease;
+
+  pointer-events: none;
+}
+
+
+/* =========================================
+   SKILL HOVER
+========================================= */
+
+.skill:hover {
+  transform: translateY(-4px);
+
+  color: var(--text-primary) !important;
+
+  -webkit-text-fill-color: var(--text-primary) !important;
+
+  border-color: var(--primary);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.10),
+      rgba(56, 189, 248, 0.06)
+    );
+
+  box-shadow:
+    0 10px 28px rgba(37, 99, 235, 0.16);
+}
+
+
+.skill:hover::after {
+  left: 140%;
+}
+
+
+/* =========================================
+   SKILL TEXT
+========================================= */
+
+.skillText {
+  position: relative;
+
+  z-index: 30;
+
+  display: inline-block;
+
+  color: var(--text-primary) !important;
+
+  -webkit-text-fill-color: var(--text-primary) !important;
+
+  font-size: inherit;
+
+  font-weight: inherit;
+
+  line-height: 1;
+
+  white-space: nowrap;
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================
+   SKILL DOT
+========================================= */
+
+.dot {
+  position: relative;
+
+  z-index: 30;
+
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  display: inline-block;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  box-shadow:
+    0 0 8px var(--primary);
+
+  opacity: 1;
+
+  visibility: visible;
+}
+
+
+/* =========================================
+   SKILL MOBILE
+========================================= */
+
+@include mobile {
+  .skills {
     width: 100%;
 
-    gap: 0.8rem;
+    gap: 9px;
+
+    padding: 8px 0;
+  }
+
+  .skill {
+    min-height: 42px;
+
+    padding: 0 15px;
+
+    font-size: 13px !important;
+  }
+
+  .skillText {
+    font-size: 13px !important;
+  }
+
+  .dot {
+    width: 6px;
+    height: 6px;
   }
 }
 
