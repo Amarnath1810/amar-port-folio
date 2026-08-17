@@ -1,182 +1,92 @@
 @use "../../../styles/abstracts/mixins" as *;
-@use "../../../styles/abstracts/mixins" as *;
 @use "../../../styles/abstracts/breakpoints" as *;
 @use "../../../styles/abstracts/variables" as *;
 
+/* =========================================
+   HERO SECTION
+========================================= */
+
 .hero {
-  min-height: calc(100vh + 10vh);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   overflow: hidden;
-  padding-top: 130px;
-  @include tablet {
-    padding-top: 120px;
-  }
-}
-
-// .container {
-//   width: 100%;
-//   max-width: 1400px;
-//   margin: auto;
-//   padding: 0 80px;
-
-//   display: grid;
-//   grid-template-columns: 1fr 1fr;
-//   align-items: center;
-//   gap: 80px;
-
-//   @include laptop {
-//     padding-inline: 50px;
-//     gap: 50px;
-//   }
-
-//   @include tablet {
-//     @include grid(1, 60px);
-//     padding-inline: 30px;
-//     text-align: center;
-//   }
-
-//   @include mobile {
-//     padding-inline: 20px;
-//   }
-// }
-.container {
-  width: min(1400px, 100%);
-  margin-inline: auto;
-  padding-inline: clamp(16px, 4vw, 80px);
-
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(30px, 5vw, 80px);
-  align-items: center;
+  padding-top: 120px;
 
   @include tablet {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-}
-.greetingRow {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-top: 1.8rem;
-
-  @include tablet {
-    flex-direction: column;
-    justify-content: center;
-  }
-}
-
-.right {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  position: relative;
-}
-
-.buttonGroup {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-  margin-top: 2rem;
-  flex-wrap: wrap;
-
-  @include tablet {
-    justify-content: center;
+    padding-top: 100px;
   }
 
   @include mobile {
-    flex-direction: column;
-    width: 100%;
+    padding-top: 90px;
   }
 }
 
-@include mobile {
-  .primaryButton,
-  .secondaryButton {
-    width: 100%;
-    max-width: 320px;
-  }
-}
-.primaryButton,
-.secondaryButton {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.75rem;
-
-  padding: 14px 30px;
-
-  border-radius: 999px;
-
-  text-decoration: none;
-
-  font-size: 1rem;
-  font-weight: 600;
-
-  transition: all 0.35s ease;
-}
-
-.primaryButton {
-  background: var(--gradient);
-  color: var(--button-text);
-  border: none;
-
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
-
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  }
-}
-
-.secondaryButton {
-  background: transparent;
-
-  border: 2px solid var(--primary);
-
-  color: var(--primary);
-
-  &:hover {
-    background: var(--primary);
-    color: var(--button-text);
-  }
-}
+/* =========================================
+   MAIN HERO LAYOUT
+========================================= */
 
 .heroLayout {
   position: relative;
   width: 100%;
+  max-width: 1500px;
+  min-height: calc(100vh - 120px);
+
+  margin: 0 auto;
+
+  padding: 60px clamp(20px, 5vw, 80px);
+
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: calc(100vh + 10vh);
+  grid-template-columns: minmax(0, 55%) minmax(0, 45%);
+
   align-items: center;
+
+  gap: clamp(20px, 4vw, 70px);
+
   overflow: hidden;
-  gap: 80px;
-  margin-bottom: 80px;
-  //   padding: 20px;
+
+  @include laptop {
+    grid-template-columns: minmax(0, 52%) minmax(0, 48%);
+    gap: 30px;
+    padding-inline: 50px;
+  }
 
   @include tablet {
+    min-height: auto;
+
     grid-template-columns: 1fr;
-    gap: 0;
+
+    gap: 50px;
+
+    padding: 60px 30px 80px;
+
+    text-align: center;
   }
 
   @include mobile {
-    gap: 0;
-    padding: 10px;
-    margin-bottom: 10px;
+    padding: 40px 20px 60px;
+
+    gap: 30px;
   }
 }
+
+/* =========================================
+   GRID BACKGROUND
+========================================= */
+
 .gridBackground {
   position: absolute;
   inset: 0;
+
+  width: 100%;
+  height: 100%;
+
   pointer-events: none;
+
   z-index: 0;
 
-  /* Horizontal + Vertical Grid */
   background-image:
     linear-gradient(
       rgba(var(--primary-rgb, 37, 99, 235), 0.08) 1px,
@@ -190,15 +100,32 @@
 
   background-size: 60px 60px;
 
-  mask-image: radial-gradient(circle, white 55%, transparent 100%);
+  mask-image: radial-gradient(
+    circle at center,
+    white 40%,
+    transparent 100%
+  );
+
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    white 40%,
+    transparent 100%
+  );
 }
+
+/* =========================================
+   BACKGROUND GLOW - LEFT
+========================================= */
 
 .gridBackground::before {
   content: "";
+
   position: absolute;
+
   width: 700px;
   height: 700px;
-  left: -220px;
+
+  left: -300px;
   top: -250px;
 
   border-radius: 50%;
@@ -210,15 +137,24 @@
   );
 
   filter: blur(90px);
+
+  pointer-events: none;
 }
+
+/* =========================================
+   BACKGROUND GLOW - RIGHT
+========================================= */
 
 .gridBackground::after {
   content: "";
+
   position: absolute;
+
   width: 650px;
   height: 650px;
-  right: -180px;
-  bottom: -220px;
+
+  right: -250px;
+  bottom: -250px;
 
   border-radius: 50%;
 
@@ -229,85 +165,189 @@
   );
 
   filter: blur(100px);
+
+  pointer-events: none;
 }
+
+/* =========================================
+   LEFT SIDE
+========================================= */
 
 .leftSide {
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
   display: flex;
+  align-items: center;
   justify-content: flex-start;
-  padding: 15px;
+
+  min-width: 0;
 }
 
-.rightSide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 15px;
-}
+/* =========================================
+   CONTENT
+========================================= */
 
 .content {
-  max-width: 650px;
   width: 100%;
+  max-width: 720px;
+}
+
+/* =========================================
+   GREETING
+========================================= */
+
+.greetingRow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 1rem;
+
+  margin-bottom: 1.5rem;
+
+  @include tablet {
+    justify-content: center;
+  }
 }
 
 .greeting {
   display: inline-flex;
+
   align-items: center;
+
   gap: 0.75rem;
 
-  font-size: 1.8rem;
+  font-size: clamp(1.2rem, 2vw, 1.8rem);
+
   font-weight: 500;
 
   color: var(--text-primary);
 
-  margin-bottom: 1.8rem;
+  margin: 0;
 }
+
+/* =========================================
+   TITLE
+========================================= */
 
 .title {
   display: flex;
+
   flex-direction: column;
-  font-size: clamp(3rem, 7vw, 5.8rem);
-  line-height: 1.05;
+
+  margin: 0 0 1.5rem;
+
+  font-size: clamp(3.2rem, 6vw, 6rem);
+
+  line-height: 1.02;
+
   font-weight: 800;
-  letter-spacing: -2px;
-  margin-bottom: 1.8rem;
+
+  letter-spacing: -3px;
+
+  color: var(--text-primary);
+
+  @include laptop {
+    font-size: clamp(3rem, 5.5vw, 5rem);
+  }
 
   @include tablet {
-    font-size: 3rem;
+    font-size: clamp(3rem, 8vw, 4.8rem);
+
+    letter-spacing: -2px;
   }
 
   @include mobile {
-    font-size: 2.2rem;
-    letter-spacing: -1px;
+    font-size: 2.7rem;
+
+    letter-spacing: -1.5px;
+
+    line-height: 1.08;
   }
 }
 
+/* =========================================
+   NAME GRADIENT
+========================================= */
+
 .gradient {
-  //   background: var(--gradient);
+  display: inline-block;
+
+  background: var(--gradient);
+
+  background-clip: text;
+
   -webkit-background-clip: text;
-  //   -webkit-text-fill-color: transparent;
+
+  -webkit-text-fill-color: transparent;
+
+  color: transparent;
+
   white-space: nowrap;
 }
 
+/* =========================================
+   DESIGNATION
+========================================= */
+
 .designation {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
   width: fit-content;
-  padding: 14px 28px;
+
+  min-height: 52px;
+
+  padding: 12px 26px;
+
+  margin-bottom: 1.8rem;
+
   border-radius: 999px;
+
   background: var(--gradient);
+
   color: var(--button-text);
-  font-size: 1.45rem;
+
+  font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+
   font-weight: 700;
-  margin-bottom: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.15),
+    0 0 25px rgba(37, 99, 235, 0.15);
+
+  @include tablet {
+    margin-inline: auto;
+  }
+
   @include mobile {
+    min-height: 44px;
+
+    padding: 10px 20px;
+
     font-size: 1rem;
-    padding: 12px 20px;
   }
 }
 
-.description {
-  max-width: 580px;
+/* =========================================
+   DESCRIPTION
+========================================= */
 
-  font-size: 1.3rem;
+.description {
+  width: 100%;
+
+  max-width: 620px;
+
+  margin: 0;
+
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
 
   line-height: 1.8;
 
@@ -319,169 +359,386 @@
 
   @include mobile {
     font-size: 1rem;
+
     line-height: 1.7;
   }
 }
 
+/* =========================================
+   SKILLS
+========================================= */
+
 .skills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 22px;
-  margin-top: 2.5rem;
-  margin-left: 45px;
   position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  align-items: center;
+
+  gap: 14px;
+
+  margin-top: 2rem;
+
+  margin-left: 0;
+
+  padding: 10px 0;
 
   @include tablet {
     justify-content: center;
-     margin-left: 0px;
   }
 
   @include mobile {
-    justify-content: center;
-    gap: 12px;
-    margin-left: 0px;
+    gap: 10px;
   }
+}
 
-  &::before {
-    content: "";
-    position: absolute;
-    inset: -30px;
-    pointer-events: none;
-    opacity: 0.25;
+/* =========================================
+   SKILL BACKGROUND LINES
+========================================= */
 
-    background-image: repeating-linear-gradient(
+.skills::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -25px;
+
+  pointer-events: none;
+
+  opacity: 0.25;
+
+  background-image:
+    repeating-linear-gradient(
       -45deg,
       rgba(59, 130, 246, 0.12) 0px,
       rgba(59, 130, 246, 0.12) 2px,
       transparent 2px,
       transparent 18px
     );
-  }
 }
+
+/* =========================================
+   SKILL CHIP
+========================================= */
+
 .skill {
   position: relative;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
 
-  padding: 12px 22px;
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 9px;
+
+  padding: 10px 18px;
 
   border-radius: 999px;
 
   color: var(--text-primary);
 
-  font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
 
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.08),
-    rgba(255, 255, 255, 0.02)
-  );
+  font-weight: 600;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.08),
+      rgba(255, 255, 255, 0.02)
+    );
 
   border: 1px solid rgba(255, 255, 255, 0.08);
 
   backdrop-filter: blur(16px);
 
-  overflow: hidden;
+  -webkit-backdrop-filter: blur(16px);
 
-  transition: all 0.35s ease;
+  overflow: hidden;
 
   cursor: pointer;
 
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  z-index: 1;
+
   &::before {
     content: "";
-    position: absolute;
-    inset: 0;
-    padding: 1px;
-    border-radius: 999px;
 
-    background: linear-gradient(90deg, #2563eb, #38bdf8, #2563eb);
+    position: absolute;
+
+    inset: 0;
+
+    padding: 1px;
+
+    border-radius: inherit;
+
+    background:
+      linear-gradient(
+        90deg,
+        #2563eb,
+        #38bdf8,
+        #2563eb
+      );
 
     mask:
       linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
 
     mask-composite: exclude;
+
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite: xor;
+
+    pointer-events: none;
   }
 
   &::after {
     content: "";
+
     position: absolute;
-    inset: -40%;
-    background: linear-gradient(
-      120deg,
-      transparent,
-      rgba(255, 255, 255, 0.25),
-      transparent
-    );
+
+    inset: -100%;
+
+    background:
+      linear-gradient(
+        120deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+      );
 
     transform: translateX(-120%);
-    transition: 0.7s;
+
+    transition: transform 0.7s ease;
+
+    pointer-events: none;
   }
 
   &:hover {
-    transform: translateY(-6px);
+    transform: translateY(-5px);
 
-    box-shadow: 0 15px 40px rgba(37, 99, 235, 0.25);
+    box-shadow:
+      0 15px 40px rgba(37, 99, 235, 0.25);
   }
 
   &:hover::after {
     transform: translateX(120%);
   }
+
+  @include mobile {
+    padding: 8px 14px;
+
+    font-size: 13px;
+  }
 }
-.socials {
-  margin-left: 20px;
+
+/* =========================================
+   SKILL DOT
+========================================= */
+
+.dot {
+  width: 7px;
+  height: 7px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: var(--primary);
+
+  box-shadow:
+    0 0 8px var(--primary);
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.buttons {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-start;
+
+  gap: 1rem;
+
+  width: 100%;
+
+  margin-top: 2rem;
+
   @include tablet {
-    margin-left: 0px;
+    justify-content: center;
   }
 
   @include mobile {
-    margin-left: 0px;
-  }
-}
-.bottomSection {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
-  margin-top: 2rem;
-  @include tablet {
     flex-direction: column;
-    align-items: center;
-    text-align: center;
+
+    width: 100%;
+
+    gap: 0.8rem;
   }
 }
 
-.leftContent {
+/* =========================================
+   BUTTON GROUP
+========================================= */
+
+.buttonGroup {
   display: flex;
-  flex-direction: column;
-  gap: 2rem;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 0;
+
+  @include tablet {
+    justify-content: center;
+  }
+
+  @include mobile {
+    flex-direction: column;
+
+    width: 100%;
+  }
 }
 
-.rightContent {
-  flex: 1;
-  display: flex;
-  justify-content: center;
+/* =========================================
+   PRIMARY / SECONDARY BUTTON
+========================================= */
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+
   align-items: center;
+
+  justify-content: center;
+
+  gap: 0.75rem;
+
+  min-height: 52px;
+
+  padding: 13px 28px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease;
+
+  @include mobile {
+    width: 100%;
+
+    max-width: 320px;
+  }
 }
+
+/* =========================================
+   PRIMARY BUTTON
+========================================= */
+
+.primaryButton {
+  background: var(--gradient);
+
+  color: var(--button-text);
+
+  border: none;
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.15);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* =========================================
+   SECONDARY BUTTON
+========================================= */
+
+.secondaryButton {
+  background: transparent;
+
+  border: 2px solid var(--primary);
+
+  color: var(--primary);
+
+  &:hover {
+    transform: translateY(-4px);
+
+    background: var(--primary);
+
+    color: var(--button-text);
+
+    box-shadow:
+      0 15px 35px rgba(37, 99, 235, 0.2);
+  }
+}
+
+/* =========================================
+   SOCIALS
+========================================= */
 
 .socials {
   display: flex;
+
   align-items: center;
-  gap: 1.2rem;
-  margin-top: 1rem;
+
+  gap: 1.1rem;
+
+  margin-top: 1.5rem;
+
+  margin-left: 0;
+
   @include tablet {
     justify-content: center;
-    margin-top: 1rem;
+  }
+
+  @include mobile {
+    gap: 0.8rem;
+
+    margin-top: 1.2rem;
   }
 }
 
+/* =========================================
+   SOCIAL ICON
+========================================= */
+
 .socialIcon {
-  width: 62px;
-  height: 62px;
+  width: 56px;
+  height: 56px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
@@ -493,80 +750,154 @@
 
   color: var(--text-primary);
 
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 
   text-decoration: none;
 
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.08);
 
-  transition: all 0.35s ease;
+  transition:
+    transform 0.35s ease,
+    background 0.35s ease,
+    color 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
 
   &:hover {
+    transform: translateY(-5px);
+
     background: var(--primary);
+
     color: var(--button-text);
 
     border-color: var(--primary);
 
-    box-shadow: 0 18px 35px rgba(37, 99, 235, 0.25);
+    box-shadow:
+      0 18px 35px rgba(37, 99, 235, 0.25);
   }
+
   @include mobile {
-    width: 50px;
-    height: 50px;
-    font-size: 1.4rem;
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.3rem;
   }
 }
 
-.orbitWrapper {
+/* =========================================
+   RIGHT SIDE
+========================================= */
+
+.rightSide {
   position: relative;
 
-  width: 780px;
-  height: 780px;
+  z-index: 2;
+
+  width: 100%;
+
+  min-width: 0;
+
+  min-height: 600px;
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
   overflow: visible;
 
   @include laptop {
-    width: 650px;
-    height: 650px;
+    min-height: 520px;
+  }
+
+  @include tablet {
+    min-height: 480px;
+  }
+
+  @include mobile {
+    min-height: 350px;
+  }
+}
+
+/* =========================================
+   ORBIT WRAPPER
+========================================= */
+
+.orbitWrapper {
+  position: relative;
+
+  width: min(100%, 700px);
+
+  aspect-ratio: 1 / 1;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  overflow: visible;
+
+  @include laptop {
+    width: 600px;
   }
 
   @include tablet {
     width: 470px;
-    height: 470px;
+    max-width: 100%;
   }
 
   @include mobile {
-    width: 320px;
-    height: 320px;
+    width: 330px;
+    max-width: 100%;
   }
 }
 
+/* =========================================
+   ORBIT SVG
+========================================= */
+
 .orbitSvg {
   position: absolute;
+
   inset: 0;
+
   width: 100%;
+
   height: 100%;
+
   overflow: visible;
+
   pointer-events: none;
 }
 
 .orbitSvg path {
   stroke-dasharray: 10 8;
+
   stroke-linecap: round;
+
   opacity: 0.9;
 
-  filter: drop-shadow(0 0 8px var(--primary));
+  filter:
+    drop-shadow(
+      0 0 8px var(--primary)
+    );
 
-  animation: dashMove 6s linear infinite;
+  animation:
+    dashMove 6s linear infinite;
 }
+
+/* =========================================
+   ORBIT ANIMATION
+========================================= */
 
 @keyframes dashMove {
   from {
     stroke-dashoffset: 0;
   }
+
   to {
     stroke-dashoffset: -120;
   }
@@ -581,72 +912,121 @@
     stroke-dashoffset: -120;
   }
 }
+
+/* =========================================
+   PROFILE IMAGE
+========================================= */
+
 .profile {
-  width: 480px;
-  height: 480px;
+  position: relative;
+
+  width: 430px;
+
+  aspect-ratio: 1 / 1;
 
   border-radius: 50%;
+
   overflow: hidden;
 
   background: var(--card-bg);
 
   border: 8px solid var(--surface);
 
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.15),
+    0 0 50px rgba(37, 99, 235, 0.12);
+
+  z-index: 2;
 
   img {
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
+    display: block;
   }
+
+  @include laptop {
+    width: 370px;
+  }
+
   @include tablet {
-    width: 250px;
-    height: 250px;
+    width: 270px;
   }
 
   @include mobile {
     width: 190px;
-    height: 190px;
+
+    border-width: 5px;
   }
 }
 
+/* =========================================
+   ORBIT
+========================================= */
+
 .orbit {
   position: absolute;
+
+  inset: 0;
+
   width: 100%;
+
   height: 100%;
+
+  pointer-events: none;
 }
+
+/* =========================================
+   ORBIT ITEMS
+========================================= */
 
 .orbitItem {
   position: absolute;
 
-  width: 90px;
-  height: 90px;
+  width: 82px;
 
-  margin-left: -45px;
-  margin-top: -45px;
+  height: 82px;
+
+  margin-left: -41px;
+
+  margin-top: -41px;
 
   border-radius: 50%;
+
   background: var(--card-bg);
+
   border: 1px solid var(--border);
 
   display: flex;
+
   align-items: center;
+
   justify-content: center;
 
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.12);
 
-  transition: 0.3s;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  pointer-events: auto;
 
   @include laptop {
-    width: 80px;
-    height: 80px;
-    margin-left: -40px;
-    margin-top: -40px;
+    width: 72px;
+    height: 72px;
+
+    margin-left: -36px;
+    margin-top: -36px;
   }
 
   @include tablet {
     width: 60px;
     height: 60px;
+
     margin-left: -30px;
     margin-top: -30px;
   }
@@ -654,35 +1034,151 @@
   @include mobile {
     width: 48px;
     height: 48px;
+
     margin-left: -24px;
     margin-top: -24px;
   }
 }
 
+.orbitItem:hover {
+  transform: scale(1.12);
+
+  box-shadow:
+    0 20px 45px rgba(37, 99, 235, 0.25);
+}
+
+/* =========================================
+   THEME TOGGLE
+========================================= */
+
 .themeToggleWrapper {
   position: absolute;
+
   top: 30px;
+
   right: 20px;
+
   z-index: 1000;
 }
-.buttons {
+
+/* =========================================
+   BOTTOM SECTION
+========================================= */
+
+.bottomSection {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.2rem;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 3rem;
+
+  margin-top: 2rem;
 
   @include tablet {
-    position: static;
-    left: auto;
-    transform: none;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+  }
+}
+
+.leftContent {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2rem;
+}
+
+.rightContent {
+  flex: 1;
+
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+}
+
+/* =========================================
+   DESKTOP LARGE
+========================================= */
+
+@media (min-width: 1500px) {
+  .heroLayout {
+    max-width: 1600px;
+
+    grid-template-columns: 55% 45%;
+
+    padding-inline: 70px;
   }
 
-  @include mobile {
-    position: static;
-    left: auto;
-    transform: none;
+  .profile {
+    width: 460px;
+  }
+
+  .orbitWrapper {
+    width: 720px;
+  }
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@include tablet {
+  .heroLayout {
+    width: 100%;
+  }
+
+  .leftSide {
+    width: 100%;
+  }
+
+  .rightSide {
+    width: 100%;
+  }
+
+  .content {
+    margin-inline: auto;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@include mobile {
+  .hero {
+    min-height: auto;
+  }
+
+  .heroLayout {
+    width: 100%;
+
+    overflow: visible;
+  }
+
+  .gridBackground {
+    background-size: 40px 40px;
+  }
+
+  .greeting {
+    font-size: 1.1rem;
+  }
+
+  .skills {
+    margin-top: 1.5rem;
+  }
+
+  .rightSide {
+    overflow: visible;
+  }
+
+  .orbitWrapper {
+    overflow: visible;
   }
 }
