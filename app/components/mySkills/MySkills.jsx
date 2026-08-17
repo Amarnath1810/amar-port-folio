@@ -20,48 +20,75 @@ export default function MySkills() {
   return (
     <section
       id="skills"
-      className="relative overflow-hidden bg-[var(--background)] py-32"
+      className="
+        relative
+        overflow-hidden
+        bg-[var(--background)]
+        py-24
+        md:py-32
+      "
     >
-      {/* =========================================
+      {/* =====================================================
           BACKGROUND AMBIENT GLOW
-      ========================================= */}
+      ====================================================== */}
 
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 overflow-hidden">
+        {/* Left glow */}
         <div
           className="
             absolute
-            -left-32
+            -left-40
             top-1/4
-            h-[600px]
-            w-[600px]
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-[radial-gradient(circle,var(--primary)/0.15_0%,transparent_70%)]
             blur-[120px]
+            opacity-70
           "
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in srgb, var(--primary) 15%, transparent) 0%, transparent 70%)",
+          }}
         />
 
+        {/* Right glow */}
         <div
           className="
             absolute
-            -right-32
+            -right-40
             bottom-1/4
-            h-[600px]
-            w-[600px]
+            h-[500px]
+            w-[500px]
             rounded-full
-            bg-[radial-gradient(circle,var(--secondary)/0.15_0%,transparent_70%)]
             blur-[120px]
+            opacity-70
           "
+          style={{
+            background:
+              "radial-gradient(circle, color-mix(in srgb, var(--secondary) 15%, transparent) 0%, transparent 70%)",
+          }}
         />
       </div>
 
-      {/* =========================================
+      {/* =====================================================
           MAIN CONTAINER
-      ========================================= */}
+      ====================================================== */}
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6">
-        {/* =========================================
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          w-full
+          max-w-7xl
+          px-4
+          sm:px-6
+          lg:px-8
+        "
+      >
+        {/* =====================================================
             HEADER
-        ========================================= */}
+        ====================================================== */}
 
         <motion.div
           initial={{
@@ -97,7 +124,7 @@ export default function MySkills() {
               text-xs
               font-semibold
               uppercase
-              tracking-widest
+              tracking-[0.2em]
               text-[var(--primary)]
               backdrop-blur-xl
             "
@@ -134,20 +161,22 @@ export default function MySkills() {
               font-black
               tracking-tight
               text-[var(--text-primary)]
+              sm:text-5xl
               md:text-6xl
             "
           >
             Tech Stack & Expertise
           </h2>
 
-          {/* Decorative Line */}
+          {/* Decorative line */}
 
-          <div className="mt-4 mb-8 flex justify-center">
+          <div className="my-6 flex justify-center">
             <svg
               width="420"
               height="20"
               viewBox="0 0 220 20"
               xmlns="http://www.w3.org/2000/svg"
+              className="max-w-full"
             >
               <defs>
                 <linearGradient
@@ -197,7 +226,8 @@ export default function MySkills() {
 
           <p
             className="
-              mt-4
+              mx-auto
+              max-w-2xl
               text-base
               leading-relaxed
               text-[var(--text-secondary)]
@@ -209,11 +239,21 @@ export default function MySkills() {
           </p>
         </motion.div>
 
-        {/* =========================================
+        {/* =====================================================
             SKILLS GRID
-        ========================================= */}
+        ====================================================== */}
 
-        <div className="skillsGrid">
+        <div
+          className="
+            mt-14
+            grid
+            grid-cols-1
+            gap-5
+            sm:grid-cols-2
+            lg:grid-cols-3
+            xl:grid-cols-4
+          "
+        >
           {skillsData.map((skill, index) => {
             const Icon = skill.icon;
 
@@ -240,6 +280,7 @@ export default function MySkills() {
                 }}
                 viewport={{
                   once: true,
+                  amount: 0.1,
                 }}
                 transition={{
                   delay: index * 0.04,
@@ -249,14 +290,24 @@ export default function MySkills() {
                 whileHover={{
                   y: -6,
                 }}
-                className="skillCardWrapper"
+                className="group relative h-full"
               >
-                {/* =========================================
+                {/* =================================================
                     OUTER GLOW
-                ========================================= */}
+                ================================================== */}
 
                 <div
-                  className="skillOuterGlow"
+                  className="
+                    pointer-events-none
+                    absolute
+                    -inset-[1px]
+                    rounded-3xl
+                    opacity-0
+                    blur-xl
+                    transition-opacity
+                    duration-500
+                    group-hover:opacity-30
+                  "
                   style={{
                     background: `linear-gradient(
                       135deg,
@@ -266,31 +317,77 @@ export default function MySkills() {
                   }}
                 />
 
-                {/* =========================================
+                {/* =================================================
                     MAIN CARD
-                ========================================= */}
+                ================================================== */}
 
-                <div className="skillCard">
-                  {/* =========================================
-                      CORNER GLOW
-                  ========================================= */}
+                <div
+                  className="
+                    relative
+                    flex
+                    h-full
+                    min-h-[230px]
+                    flex-col
+                    overflow-hidden
+                    rounded-3xl
+                    border
+                    border-[var(--border)]
+                    bg-[var(--surface)]
+                    p-5
+                    shadow-lg
+                    backdrop-blur-xl
+                    transition-all
+                    duration-300
+                    group-hover:border-[var(--primary)]/30
+                    group-hover:shadow-2xl
+                  "
+                >
+                  {/* Corner glow */}
 
                   <div
-                    className="skillCornerGlow"
+                    className="
+                      pointer-events-none
+                      absolute
+                      -right-16
+                      -top-16
+                      h-32
+                      w-32
+                      rounded-full
+                      opacity-10
+                      blur-3xl
+                      transition-all
+                      duration-500
+                      group-hover:opacity-30
+                      group-hover:scale-150
+                    "
                     style={{
                       backgroundColor: glowColor,
                     }}
                   />
 
-                  {/* =========================================
+                  {/* =================================================
                       TOP CONTENT
-                  ========================================= */}
+                  ================================================== */}
 
-                  <div className="skillCardTop">
+                  <div className="relative z-10 flex items-start gap-4">
                     {/* Icon */}
 
                     <div
-                      className="skillIcon"
+                      className="
+                        flex
+                        h-14
+                        w-14
+                        shrink-0
+                        items-center
+                        justify-center
+                        rounded-2xl
+                        border
+                        border-[var(--border)]
+                        bg-[var(--background)]
+                        transition-all
+                        duration-300
+                        group-hover:scale-110
+                      "
                       style={{
                         boxShadow: `0 8px 20px -6px ${
                           isBlackBrand
@@ -300,7 +397,7 @@ export default function MySkills() {
                       }}
                     >
                       <Icon
-                        className="skillIconSvg"
+                        className="h-7 w-7"
                         style={{
                           color: brandColor,
                         }}
@@ -309,22 +406,37 @@ export default function MySkills() {
 
                     {/* Skill information */}
 
-                    <div className="skillInfo">
-                      <h3 className="skillName">
+                    <div className="min-w-0 flex-1">
+                      <h3
+                        className="
+                          text-lg
+                          font-bold
+                          leading-tight
+                          text-[var(--text-primary)]
+                        "
+                      >
                         {skill.name}
                       </h3>
 
                       {/* Tags */}
 
                       {skill.tags && skill.tags.length > 0 && (
-                        <div className="skillTags">
+                        <div className="mt-2 flex flex-wrap gap-1.5">
                           {skill.tags.map((tag) => (
                             <span
                               key={tag}
-                              className="skillTag"
+                              className="
+                                rounded-md
+                                border
+                                px-2
+                                py-1
+                                text-[10px]
+                                font-medium
+                                leading-none
+                              "
                               style={{
                                 backgroundColor: isBlackBrand
-                                  ? "var(--surface)"
+                                  ? "var(--background)"
                                   : `${brandColor}18`,
 
                                 color: isBlackBrand
@@ -344,20 +456,32 @@ export default function MySkills() {
                     </div>
                   </div>
 
-                  {/* =========================================
-                      PROFICIENCY
-                  ========================================= */}
+                  {/* =================================================
+                      SPACER
+                  ================================================== */}
 
-                  <div className="skillProgress">
+                  <div className="flex-1" />
+
+                  {/* =================================================
+                      PROFICIENCY
+                  ================================================== */}
+
+                  <div className="relative z-10 mt-6">
                     {/* Header */}
 
-                    <div className="skillProgressHeader">
-                      <span className="skillProgressLabel">
+                    <div className="mb-2 flex items-center justify-between">
+                      <span
+                        className="
+                          text-sm
+                          font-medium
+                          text-[var(--text-secondary)]
+                        "
+                      >
                         Proficiency
                       </span>
 
                       <span
-                        className="skillPercentage"
+                        className="text-sm font-bold"
                         style={{
                           color: brandColor,
                         }}
@@ -368,7 +492,15 @@ export default function MySkills() {
 
                     {/* Progress Track */}
 
-                    <div className="skillProgressTrack">
+                    <div
+                      className="
+                        h-2
+                        w-full
+                        overflow-hidden
+                        rounded-full
+                        bg-[var(--background)]
+                      "
+                    >
                       <motion.div
                         initial={{
                           width: 0,
@@ -384,7 +516,7 @@ export default function MySkills() {
                           delay: index * 0.05,
                           ease: "easeOut",
                         }}
-                        className="skillProgressBar"
+                        className="h-full rounded-full"
                         style={{
                           backgroundColor: brandColor,
 
@@ -397,6 +529,25 @@ export default function MySkills() {
                       />
                     </div>
                   </div>
+
+                  {/* Bottom accent */}
+
+                  <div
+                    className="
+                      pointer-events-none
+                      absolute
+                      bottom-0
+                      left-0
+                      h-[2px]
+                      w-0
+                      transition-all
+                      duration-500
+                      group-hover:w-full
+                    "
+                    style={{
+                      backgroundColor: brandColor,
+                    }}
+                  />
                 </div>
               </motion.div>
             );
