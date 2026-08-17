@@ -7,7 +7,7 @@ export const heroData = {
 
   firstName: "VEERAMREDDY",
 
-  lastName: "AMARNATH REDDY",
+  lastName: "AMARNATH",
 
   designation: [
     "Full Stack Developer",
