@@ -45,7 +45,7 @@
 
   gap: clamp(20px, 4vw, 70px);
 
-  overflow: hidden;
+  overflow: visible;
 
   @include laptop {
     grid-template-columns: minmax(0, 52%) minmax(0, 48%);
@@ -175,7 +175,6 @@
 
 .leftSide {
   position: relative;
-
   z-index: 2;
 
   width: 100%;
@@ -193,9 +192,10 @@
 
 .content {
   width: 100%;
-  max-width: 720px;
+  max-width: 760px;
+  min-width: 0;
+  overflow: visible;
 }
-
 /* =========================================
    GREETING
 ========================================= */
@@ -234,40 +234,86 @@
    TITLE
 ========================================= */
 
+
 .title {
   display: flex;
-
   flex-direction: column;
 
+  width: 100%;
+  max-width: 720px;
+  min-width: 0;
+
   margin: 0 0 1.5rem;
-
-  font-size: clamp(3.2rem, 6vw, 6rem);
-
-  line-height: 1.02;
-
-  font-weight: 800;
-
-  letter-spacing: -3px;
+  padding: 0;
 
   color: var(--text-primary);
 
+  /*
+   * Keep the name large, but prevent it from overflowing
+   * the left Hero column.
+   */
+  font-size: clamp(2.8rem, 4vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+  letter-spacing: -2px;
+
+  overflow: visible;
+
   @include laptop {
-    font-size: clamp(3rem, 5.5vw, 5rem);
+    max-width: 650px;
+    font-size: clamp(2.6rem, 3.8vw, 4rem);
+    letter-spacing: -1.8px;
   }
 
   @include tablet {
-    font-size: clamp(3rem, 8vw, 4.8rem);
+    width: 100%;
+    max-width: 700px;
+    align-items: center;
 
-    letter-spacing: -2px;
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    letter-spacing: -1.5px;
+
+    text-align: center;
   }
 
   @include mobile {
-    font-size: 2.7rem;
+    width: 100%;
+    max-width: 100%;
 
-    letter-spacing: -1.5px;
-
+    font-size: clamp(2rem, 10vw, 3rem);
+    letter-spacing: -1px;
     line-height: 1.08;
+
+    text-align: center;
   }
+}
+
+/* =========================================
+   FIRST NAME
+========================================= */
+
+.firstName {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  color: var(--text-primary);
+
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+
+  /*
+   * Keep each name on one line on desktop.
+   * Mobile overrides this below.
+   */
+  white-space: nowrap;
 }
 
 /* =========================================
@@ -275,19 +321,56 @@
 ========================================= */
 
 .gradient {
-  display: inline-block;
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+
+  white-space: nowrap;
+
+  /*
+   * Do not let the long surname push the whole Hero
+   * outside its left column.
+   */
+  overflow: hidden;
+  text-overflow: clip;
+
+  background: var(--gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
+
+========================================= */
+.gradient {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  white-space: nowrap;
+
+  overflow: hidden;
 
   background: var(--gradient);
 
   background-clip: text;
-
   -webkit-background-clip: text;
 
-  -webkit-text-fill-color: transparent;
-
   color: transparent;
-
-  white-space: nowrap;
+  -webkit-text-fill-color: transparent;
 }
 
 /* =========================================
@@ -585,31 +668,30 @@
    ACTUAL SKILL TEXT
 ========================================= */
 
-/*
- * Your skill name is a text node:
- *
- * <span className={styles.dot}></span>
- * React Native
- *
- * Give the whole chip a strong visible text color.
- */
-
-.skill > span:last-child {
+.skillText {
   position: relative;
-
   z-index: 30;
 
-  color: #ffffff !important;
+  display: inline-block;
 
+  color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 
-  opacity: 1;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: 1;
 
+  white-space: nowrap;
+
+  opacity: 1;
   visibility: visible;
 }
 
 /* =========================================
    SKILL DOT
+========================================= */
+
+
 ========================================= */
 
 .dot {
@@ -635,6 +717,23 @@
   opacity: 1;
 
   visibility: visible;
+}
+
+/* =========================================
+   MOBILE NAME OVERRIDE
+========================================= */
+
+@include mobile {
+  .firstName,
+  .gradient {
+    width: 100%;
+    max-width: 100%;
+
+    white-space: normal;
+    overflow: visible;
+
+    text-align: center;
+  }
 }
 
 /* =========================================
