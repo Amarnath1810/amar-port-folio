@@ -1,7 +1,12 @@
-@use "../../../styles/abstracts/mixins" as *;
-@use "../../../styles/abstracts/breakpoints" as *;
-@use "../../../styles/abstracts/variables" as *;
+@use "../styles/abstracts/variables" as *;
+@use "../styles/abstracts/mixins" as *;
+@use "../styles/abstracts/breakpoints" as *;
 
+@import "tailwindcss";
+
+/* your remaining global styles */
+
+/* your remaining global styles */
 /* =========================================
    HERO SECTION
 ========================================= */
