@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import {
+import {available
   FaEnvelope,
   FaPhoneAlt,
   FaMapMarkerAlt,
@@ -276,7 +276,7 @@ export default function ContactUs() {
                 <div>
                   <p className="text-xs text-[var(--text-secondary)]">Status</p>
                   <h4 className="text-sm font-medium text-[var(--text-primary)]">
-                    Available for Freelance
+                    Currently working
                   </h4>
                 </div>
               </div>
